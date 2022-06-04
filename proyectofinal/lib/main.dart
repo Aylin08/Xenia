@@ -3,8 +3,12 @@ import 'package:provider/provider.dart';
 import 'package:proyectofinal/screens/home.dart';
 
 import 'package:proyectofinal/services/spoon_services.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const AppState());
 }
 

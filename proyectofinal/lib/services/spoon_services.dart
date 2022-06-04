@@ -17,14 +17,15 @@ class SpoonServices extends ChangeNotifier {
   }
 
   Future mostrarInfo() async {
-    var url = Uri.https(_url, "/v1/nutricion", {'query': 'milk'});
+    var url = Uri.https(_url, "/v1/nutrition", {'query': 'milk'});
 
     final response = await http.get(url, headers: {'X-Api-Key': _apiKey});
 
     final dieta = Alimentos.fromJson(response.body);
     propiedad = dieta.items!;
 
-    print(propiedad[0].calories);
+    print(propiedad[0].name);
+
     notifyListeners();
   }
 }

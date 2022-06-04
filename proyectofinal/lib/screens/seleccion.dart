@@ -17,53 +17,56 @@ class _SeleccionState extends State<Seleccion> {
     final mostrarInfos = Provider.of<SpoonServices>(context);
     mostrarInfos.mostrarInfo();
     return Scaffold(
-        endDrawer: Drawer(
-            child: ListView(padding: EdgeInsets.zero, children: [
-          DrawerHeader(
-              decoration: const BoxDecoration(
-                  gradient: LinearGradient(colors: <Color>[
-                Color.fromARGB(255, 54, 138, 57),
-                Color.fromARGB(255, 49, 159, 53)
-              ])),
-              child: Column(
-                children: <Widget>[
-                  Material(
-                    borderRadius: const BorderRadius.all(Radius.circular(50.0)),
-                    elevation: 10,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset("assets/img/apple.png",
-                          height: 70, width: 70),
-                    ),
-                  ),
-                  const Text(
-                    'Estilo saludable',
-                    style: TextStyle(color: Colors.white, fontSize: 25.0),
-                  )
-                ],
-              )),
-          ListTile(
-            leading: const Icon(Icons.info),
-            title: const Text(' Acerca de nosotros'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.help),
-            title: const Text('Ayuda'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.contact_page),
-            title: const Text('Contactanos'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-        ])),
+        // endDrawer: Drawer(
+        //     child: ListView(padding: EdgeInsets.zero, children: [
+        //   DrawerHeader(
+        //       decoration: const BoxDecoration(
+        //         gradient: LinearGradient(
+        //           colors: <Color>[
+        //             Color.fromARGB(255, 54, 138, 57),
+        //             Color.fromARGB(255, 49, 159, 53)
+        //           ],
+        //         ),
+        //       ),
+        //       child: Column(
+        //         children: <Widget>[
+        //           Material(
+        //             borderRadius: const BorderRadius.all(Radius.circular(50.0)),
+        //             elevation: 10,
+        //             child: Padding(
+        //               padding: const EdgeInsets.all(8.0),
+        //               child: Image.asset("assets/img/apple.png",
+        //                   height: 70, width: 70),
+        //             ),
+        //           ),
+        //           const Text(
+        //             'Estilo saludable',
+        //             style: TextStyle(color: Colors.white, fontSize: 25.0),
+        //           )
+        //         ],
+        //       )),
+        //   ListTile(
+        //     leading: const Icon(Icons.info),
+        //     title: const Text(' Acerca de nosotros'),
+        //     onTap: () {
+        //       Navigator.pop(context);
+        //     },
+        //   ),
+        //   ListTile(
+        //     leading: const Icon(Icons.help),
+        //     title: const Text('Ayuda'),
+        //     onTap: () {
+        //       Navigator.pop(context);
+        //     },
+        //   ),
+        //   ListTile(
+        //     leading: const Icon(Icons.contact_page),
+        //     title: const Text('Contactanos'),
+        //     onTap: () {
+        //       Navigator.pop(context);
+        //     },
+        //   ),
+        // ])),
         appBar: AppBar(
           title: const Text("Estilo de vida saludable"),
         ),

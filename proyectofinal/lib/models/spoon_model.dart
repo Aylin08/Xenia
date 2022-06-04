@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final alimentos = alimentosFromMap(jsonString);
-
 import 'dart:convert';
 
 class Alimentos {
@@ -13,15 +9,9 @@ class Alimentos {
 
   factory Alimentos.fromJson(String str) => Alimentos.fromMap(json.decode(str));
 
-  String toJson() => json.encode(toMap());
-
   factory Alimentos.fromMap(Map<String, dynamic> json) => Alimentos(
-        items: List<Item>.from(json["items"].map((x) => Item.fromMap(x))),
+        items: List<Item>.from(json["items"]!.map((x) => Item.fromMap(x))),
       );
-
-  Map<String, dynamic> toMap() => {
-        "items": List<dynamic>.from(items!.map((x) => x.toMap())),
-      };
 }
 
 class Item {
@@ -55,35 +45,18 @@ class Item {
 
   factory Item.fromJson(String str) => Item.fromMap(json.decode(str));
 
-  String toJson() => json.encode(toMap());
-
   factory Item.fromMap(Map<String, dynamic> json) => Item(
         sugarG: json["sugar_g"].toInt(),
         fiberG: json["fiber_g"].toInt(),
-        servingSizeG: json["serving_size_g"].toInt,
+        servingSizeG: json["serving_size_g"].toInt(),
         sodiumMg: json["sodium_mg"].toInt(),
-        name: json["name"].toString(),
+        name: json["name"],
         potassiumMg: json["potassium_mg"].toInt(),
         fatSaturatedG: json["fat_saturated_g"].toDouble(),
         fatTotalG: json["fat_total_g"].toDouble(),
         calories: json["calories"].toDouble(),
-        cholesterolMg: json["cholesterol_mg"].toInt,
+        cholesterolMg: json["cholesterol_mg"],
         proteinG: json["protein_g"].toDouble(),
         carbohydratesTotalG: json["carbohydrates_total_g"].toDouble(),
       );
-
-  Map<String, dynamic> toMap() => {
-        "sugar_g": sugarG,
-        "fiber_g": fiberG,
-        "serving_size_g": servingSizeG,
-        "sodium_mg": sodiumMg,
-        "name": name,
-        "potassium_mg": potassiumMg,
-        "fat_saturated_g": fatSaturatedG,
-        "fat_total_g": fatTotalG,
-        "calories": calories,
-        "cholesterol_mg": cholesterolMg,
-        "protein_g": proteinG,
-        "carbohydrates_total_g": carbohydratesTotalG,
-      };
 }
