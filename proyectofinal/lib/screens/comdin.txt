@@ -1,0 +1,43 @@
+Row(
+                  children: const [
+                    Image(
+                      image: NetworkImage(
+                          "https://www.ensenada.tecnm.mx/wp-content/uploads/2022/03/P1090766.jpg"),
+                      width: 180,
+                    ),
+                    SizedBox(width: 15),
+                    Image(
+                      image: NetworkImage(
+                          "https://www.ensenada.tecnm.mx/wp-content/uploads/2022/03/P1090766.jpg"),
+                      width: 170,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: const [
+                    Card(
+                      child: InkWell(
+                        child: SizedBox(
+                          width: 170,
+                          height: 100,
+                          child: Text(
+                            " ANUNCIO QUE PONDRE AQUI CON LA API.",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Card(
+                      child: InkWell(
+                        child: SizedBox(
+                          width: 170,
+                          height: 100,
+                          child: Text(
+                            " ANUNCIO QUE PONDRE AQUI CON LA API.",
+                            textAlign: TextAlign.justify,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
